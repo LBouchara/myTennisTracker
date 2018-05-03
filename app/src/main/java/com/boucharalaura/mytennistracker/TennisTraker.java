@@ -84,11 +84,8 @@ public class TennisTraker extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            InsertData FRGData = InsertData.newInstance();
-            FragmentTransaction fgt = getSupportFragmentManager().beginTransaction();
-            fgt.addToBackStack("new fragment");
-            fgt.replace(R.id.container, FRGData).commit();
+        if (id == R.id.nav_camera)
+        {
         }
         else if (id == R.id.nav_gallery)
         {

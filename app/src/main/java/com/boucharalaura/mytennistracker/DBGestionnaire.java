@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class DBGestionnaire {
 
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
     private static final String DB_NAME = "tennismatch.db";
 
     private static final int NUM_COL_PLAYER1 = 1;
@@ -49,8 +49,7 @@ public class DBGestionnaire {
         c.moveToFirst();
         matchesList.add(cursorToMatch(c));
 
-        while(!c.isLast()) {
-            c.moveToNext();
+        while(c.moveToNext()) {
             matchesList.add(cursorToMatch(c));
         }
 

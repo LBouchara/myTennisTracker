@@ -9,96 +9,101 @@
     tools:context="com.boucharalaura.mytennistracker.TennisTraker"
     tools:showIn="@layout/app_bar_tennis_traker">
 
-    <TableLayout
-        android:id="@+id/matches_list"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--<TableRow
-            android:id="@+id/match"
+        <TableLayout
+            android:id="@+id/matches_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TableLayout
-                android:id="@+id/match_informations"
+            <!--<TableRow
+                android:id="@+id/match"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TableRow
-                    android:id="@+id/match_more_informations"
-                    android:layout_width="383dp"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/players"
-                        android:layout_width="248dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_blue_dark"
-                        android:padding="5dp"
-                        android:text="Player1 - Player2"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/score"
-                        android:layout_width="187dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/holo_blue_dark"
-                        android:padding="5dp"
-                        android:text="1 - 0"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/match_main_informations"
+                <TableLayout
+                    android:id="@+id/match_informations"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/place"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Roland Garros"
-                        android:textColor="@android:color/background_dark"
-                        android:textSize="18sp" />
+                    <TableRow
+                        android:id="@+id/match_more_informations"
+                        android:layout_width="383dp"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="13/01/2018"
-                        android:textColor="@android:color/background_dark"
-                        android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/players"
+                            android:layout_width="248dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/holo_blue_dark"
+                            android:padding="5dp"
+                            android:text="Player1 - Player2"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                </TableRow>
+                        <TextView
+                            android:id="@+id/score"
+                            android:layout_width="187dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@android:color/holo_blue_dark"
+                            android:padding="5dp"
+                            android:text="1 - 0"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                <TableRow
-                    android:id="@+id/match_statistic"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    </TableRow>
 
-                    <TextView
-                        android:id="@+id/statistic"
+                    <TableRow
+                        android:id="@+id/match_main_informations"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Statistique : 3 - 2"
-                        android:textColor="@android:color/background_dark"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="224dp" />
-                </TableRow>
-            </TableLayout>
-        </TableRow>-->
-    </TableLayout>
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="Roland Garros"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="13/01/2018"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/match_statistic"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/statistic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="Statistique : 3 - 2"
+                            android:textColor="@android:color/background_dark"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="224dp" />
+                    </TableRow>
+                </TableLayout>
+            </TableRow>-->
+        </TableLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

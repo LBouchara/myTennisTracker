@@ -76,47 +76,48 @@ public class DisplayData extends Fragment {
         String statisticData;
 
         if(matchesList != null) {
-            TableLayout tableLayoutMatch = new TableLayout(getContext());
+            TableLayout matchesListLayout = rootView.findViewById(R.id.matches_list);
             for(int i=0 ; i<matchesList.size(); i ++) {
+
                 playersData = matchesList.get(i).getPlayers().get(0) + " - " + matchesList.get(i).getPlayers().get(1);
                 scoreData = matchesList.get(i).getScore();
                 placeData = matchesList.get(i).getPlace();
                 dateData = matchesList.get(i).getDate();
                 statisticData = matchesList.get(i).getStatistic();
 
-                TableRow match = new TableRow(this.getContext());
-                match.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                TableRow match = new TableRow(this.getActivity());
+                match.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
 
-                TableLayout matchInformation = new TableLayout(this.getContext());
-                matchInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                TableLayout matchInformation = new TableLayout(this.getActivity());
+                matchInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
 
-                TableRow matchMoreInformation = new TableRow(this.getContext());
-                matchMoreInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-                TextView players = new TextView(this.getContext());
+                TableRow matchMoreInformation = new TableRow(this.getActivity());
+                matchMoreInformation.setLayoutParams(new TableRow.LayoutParams(383, TableRow.LayoutParams.WRAP_CONTENT));
+                TextView players = new TextView(this.getActivity());
                 players.setText(playersData);
-                players.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-                TextView score = new TextView(this.getContext());
+                players.setLayoutParams(new TableRow.LayoutParams(248, TableRow.LayoutParams.MATCH_PARENT, 1));
+                TextView score = new TextView(this.getActivity());
                 score.setText(scoreData);
-                score.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                score.setLayoutParams(new TableRow.LayoutParams(187, TableRow.LayoutParams.MATCH_PARENT, 1));
                 matchMoreInformation.addView(players);
                 matchMoreInformation.addView(score);
 
-                TableRow matchMainInformation = new TableRow(this.getContext());
-                matchMainInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-                TextView place = new TextView(this.getContext());
+                TableRow matchMainInformation = new TableRow(this.getActivity());
+                matchMainInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                TextView place = new TextView(this.getActivity());
                 place.setText(placeData);
-                place.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-                TextView date = new TextView(this.getContext());
+                place.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                TextView date = new TextView(this.getActivity());
                 date.setText(dateData);
-                date.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                date.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
                 matchMoreInformation.addView(place);
                 matchMoreInformation.addView(date);
 
-                TableRow matchStatistic = new TableRow(this.getContext());
-                matchStatistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
-                TextView statistic = new TextView(this.getContext());
+                TableRow matchStatistic = new TableRow(this.getActivity());
+                matchStatistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1));
+                TextView statistic = new TextView(this.getActivity());
                 statistic.setText(statisticData);
-                statistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+                statistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
                 matchMoreInformation.addView(statistic);
 
                 matchInformation.addView(matchMoreInformation);
@@ -124,7 +125,7 @@ public class DisplayData extends Fragment {
                 matchInformation.addView(matchStatistic);
 
                 match.addView(matchInformation);
-                tableLayoutMatch.addView(match);
+                matchesListLayout.addView(match);
             }
         }
         return rootView;
