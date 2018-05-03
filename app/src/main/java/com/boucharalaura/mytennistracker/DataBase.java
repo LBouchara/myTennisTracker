@@ -21,7 +21,7 @@ public class DataBase extends SQLiteOpenHelper {
     public static final String COL_STATISTIC = "STATISTIC";
 
 
-    public static final String CREATE_BDD = "CREATE TABLE IF NOT EXISTS " + TABLE + " ("
+    private static final String CREATE_BDD = "CREATE TABLE IF NOT EXISTS " + TABLE + " ("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_PLAYER1 + " TEXT NOT NULL, "
             + COL_PLAYER2 + " TEXT NOT NULL, " + COL_SCORE + " TEXT NOT NULL, " + COL_PLACE + " TEXT NOT NULL,"
             + COL_DATE + " TEXT NOT NULL, " + COL_STATISTIC + " TEXT NOT NULL);";

@@ -30,7 +30,7 @@ public class DBGestionnaire {
         this.myDataBase = new DataBase(context, DB_NAME, null, DB_VERSION);
     }
 
-    //Open access to the data base
+    //Open edit access to the data base
     public void open(Context context) { database = myDataBase.getWritableDatabase(); }
 
     //Close access to the data base
@@ -41,6 +41,7 @@ public class DBGestionnaire {
 
     public ArrayList<TennisMatch> getAllMatches() {
         //String sql = "SELECT * FROM " + DataBase.TABLE;
+        //database.execSQL(sql);
         Cursor c = database.query(DataBase.TABLE, new String[] {DataBase.COL_ID, DataBase.COL_PLAYER1, DataBase.COL_PLAYER2, DataBase.COL_SCORE, DataBase.COL_PLACE, DataBase.COL_DATE, DataBase.COL_STATISTIC}, null, null, null, null, null);
 
         if (c.getCount() == 0) return null;

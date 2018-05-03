@@ -17,11 +17,6 @@ public class InsertData {
     public InsertData() {
     }
 
-    public static InsertData newInstance() {
-        InsertData data = new InsertData();
-        return data;
-    }
-
     public void insert(FragmentActivity activity){
         try{
             DBGestionnaire gestionnaire = new DBGestionnaire(activity);

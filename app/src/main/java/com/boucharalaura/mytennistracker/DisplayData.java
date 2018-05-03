@@ -56,7 +56,6 @@ public class DisplayData extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -69,14 +68,14 @@ public class DisplayData extends Fragment {
         gestionnaire.open(getActivity());
         ArrayList<TennisMatch> matchesList = gestionnaire.getAllMatches();
 
-        String playersData;
-        String scoreData;
-        String placeData;
-        String dateData;
-        String statisticData;
-
         if(matchesList != null) {
             TableLayout matchesListLayout = rootView.findViewById(R.id.matches_list);
+            String playersData;
+            String scoreData;
+            String placeData;
+            String dateData;
+            String statisticData;
+
             for(int i=0 ; i<matchesList.size(); i ++) {
 
                 playersData = matchesList.get(i).getPlayers().get(0) + " - " + matchesList.get(i).getPlayers().get(1);
@@ -93,32 +92,46 @@ public class DisplayData extends Fragment {
 
                 TableRow matchMoreInformation = new TableRow(this.getActivity());
                 matchMoreInformation.setLayoutParams(new TableRow.LayoutParams(383, TableRow.LayoutParams.WRAP_CONTENT));
+
                 TextView players = new TextView(this.getActivity());
                 players.setText(playersData);
                 players.setLayoutParams(new TableRow.LayoutParams(248, TableRow.LayoutParams.MATCH_PARENT, 1));
+
                 TextView score = new TextView(this.getActivity());
                 score.setText(scoreData);
                 score.setLayoutParams(new TableRow.LayoutParams(187, TableRow.LayoutParams.MATCH_PARENT, 1));
+
                 matchMoreInformation.addView(players);
                 matchMoreInformation.addView(score);
 
+
+
                 TableRow matchMainInformation = new TableRow(this.getActivity());
                 matchMainInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+
                 TextView place = new TextView(this.getActivity());
                 place.setText(placeData);
                 place.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+
                 TextView date = new TextView(this.getActivity());
                 date.setText(dateData);
                 date.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
-                matchMoreInformation.addView(place);
-                matchMoreInformation.addView(date);
+
+                matchMainInformation.addView(place);
+                matchMainInformation.addView(date);
+
+
 
                 TableRow matchStatistic = new TableRow(this.getActivity());
                 matchStatistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1));
+
                 TextView statistic = new TextView(this.getActivity());
                 statistic.setText(statisticData);
                 statistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
-                matchMoreInformation.addView(statistic);
+
+                matchStatistic.addView(statistic);
+
+
 
                 matchInformation.addView(matchMoreInformation);
                 matchInformation.addView(matchMainInformation);
@@ -171,7 +184,6 @@ public class DisplayData extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
