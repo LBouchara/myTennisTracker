@@ -5,6 +5,8 @@ package com.boucharalaura.mytennistracker;
  */
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -85,21 +87,31 @@ public class DisplayData extends Fragment {
                 statisticData = matchesList.get(i).getStatistic();
 
                 TableRow match = new TableRow(this.getActivity());
-                match.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                match.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
                 TableLayout matchInformation = new TableLayout(this.getActivity());
-                matchInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                matchInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
                 TableRow matchMoreInformation = new TableRow(this.getActivity());
-                matchMoreInformation.setLayoutParams(new TableRow.LayoutParams(383, TableRow.LayoutParams.WRAP_CONTENT));
+                matchMoreInformation.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
                 TextView players = new TextView(this.getActivity());
                 players.setText(playersData);
-                players.setLayoutParams(new TableRow.LayoutParams(248, TableRow.LayoutParams.MATCH_PARENT, 1));
+                players.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                players.setBackgroundColor(Color.parseColor("#ff0099cc"));
+                players.setTextColor(Color.WHITE);
+                players.setTypeface(null, Typeface.BOLD);
+                players.setTextSize(24);
+                players.setPadding(5, 5, 5, 5);
 
                 TextView score = new TextView(this.getActivity());
                 score.setText(scoreData);
-                score.setLayoutParams(new TableRow.LayoutParams(187, TableRow.LayoutParams.MATCH_PARENT, 1));
+                score.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                score.setBackgroundColor(Color.parseColor("#ff0099cc"));
+                score.setTextColor(Color.WHITE);
+                score.setTypeface(null, Typeface.BOLD);
+                score.setTextSize(24);
+                score.setPadding(5, 5, 5, 5);
 
                 matchMoreInformation.addView(players);
                 matchMoreInformation.addView(score);
@@ -107,15 +119,19 @@ public class DisplayData extends Fragment {
 
 
                 TableRow matchMainInformation = new TableRow(this.getActivity());
-                matchMainInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
+                matchMainInformation.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
                 TextView place = new TextView(this.getActivity());
                 place.setText(placeData);
-                place.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                place.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                place.setTextSize(18);
+                place.setPadding(5, 5, 5, 5);
 
                 TextView date = new TextView(this.getActivity());
                 date.setText(dateData);
                 date.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                date.setTextSize(18);
+                date.setPadding(5, 5, 5, 5);
 
                 matchMainInformation.addView(place);
                 matchMainInformation.addView(date);
@@ -123,11 +139,13 @@ public class DisplayData extends Fragment {
 
 
                 TableRow matchStatistic = new TableRow(this.getActivity());
-                matchStatistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1));
+                matchStatistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
 
                 TextView statistic = new TextView(this.getActivity());
                 statistic.setText(statisticData);
                 statistic.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1));
+                statistic.setTextSize(18);
+                statistic.setPadding(5, 5, 5, 5);
 
                 matchStatistic.addView(statistic);
 
