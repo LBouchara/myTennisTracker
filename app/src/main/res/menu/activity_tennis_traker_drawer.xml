@@ -17,6 +17,10 @@
             android:icon="@android:drawable/ic_menu_sort_by_size"
             android:title="List" />
         <item
+            android:id="@+id/nav_recorder"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Recorder" />
+        <item
             android:id="@+id/nav_map"
             android:icon="@android:drawable/ic_dialog_map"
             android:title="Map" />

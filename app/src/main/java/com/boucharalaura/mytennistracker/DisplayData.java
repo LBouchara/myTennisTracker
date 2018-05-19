@@ -50,8 +50,6 @@ public class DisplayData extends Fragment {
      */
     public static DisplayData newInstance() {
         DisplayData fragment = new DisplayData();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -63,9 +61,8 @@ public class DisplayData extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.content_tennis_traker, container, false);
+        rootView = inflater.inflate(R.layout.matches_list_tennis_traker, container, false);
 
-        new InsertData().insert(getActivity());
         DBGestionnaire gestionnaire = new DBGestionnaire(getActivity());
         gestionnaire.open(getActivity());
         ArrayList<TennisMatch> matchesList = gestionnaire.getAllMatches();

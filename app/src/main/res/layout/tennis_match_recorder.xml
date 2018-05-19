@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.boucharalaura.mytennistracker.TennisTraker"
+    tools:showIn="@layout/app_bar_tennis_traker">
+
+    <LinearLayout
+        android:id="@+id/match_recorder"
+        android:layout_width="match_parent"
+        android:layout_height="426dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add match"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:paddingTop="4dp"
+            android:paddingBottom="2dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/instuction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complete fields to add a new match"
+            android:textSize="18sp"
+            android:paddingBottom="12dp"
+            android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/player1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="First player" />
+
+            <EditText
+                android:id="@+id/player2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Second player" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/score_player1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/score_separator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="12dp"
+                android:text=" - "
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/score_player2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Place" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:hint="Date" />
+
+        <LinearLayout
+            android:id="@+id/statistic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/stat_player1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Statistic"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/stat_separator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="12dp"
+                android:text=" - "
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/stat_player2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Statistic"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Record"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

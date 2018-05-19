@@ -1,14 +1,13 @@
 package com.boucharalaura.mytennistracker;
 
-import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class TennisTraker extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MatchesMap.OnFragmentInteractionListener {
@@ -44,6 +44,11 @@ public class TennisTraker extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        InsertData FRGData = InsertData.newInstance();
+        FragmentTransaction fgt = getSupportFragmentManager().beginTransaction();
+        fgt.addToBackStack("new fragment");
+        fgt.replace(R.id.container, FRGData).commit();
     }
 
     @Override
@@ -85,6 +90,14 @@ public class TennisTraker extends AppCompatActivity
 
         if (id == R.id.nav_camera)
         {
+            final int REQUEST_IMAGE_CAPTURE = 0;
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            //Uri imageUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),"fname_" + String.valueOf(System.currentTimeMillis()) + ".jpg"));
+            //takePictureIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, imageUri);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null)
+            {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
         }
         else if (id == R.id.nav_gallery)
         {
@@ -96,14 +109,15 @@ public class TennisTraker extends AppCompatActivity
             fgt.addToBackStack("new fragment");
             fgt.replace(R.id.container, FRGData).commit();
         }
+        else if (id == R.id.nav_recorder)
+        {
+            InsertData FRGData = InsertData.newInstance();
+            FragmentTransaction fgt = getSupportFragmentManager().beginTransaction();
+            fgt.addToBackStack("new fragment");
+            fgt.replace(R.id.container, FRGData).commit();
+        }
         else if (id == R.id.nav_manage)
         {
-            final int REQUEST_IMAGE_CAPTURE = 1;
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null)
-            {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            }
         }
         else if (id == R.id.nav_map)
         {
