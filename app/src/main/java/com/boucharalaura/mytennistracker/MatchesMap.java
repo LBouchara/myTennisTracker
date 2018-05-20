@@ -50,8 +50,6 @@ public class MatchesMap extends Fragment {
      */
     public static MatchesMap newInstance() {
         MatchesMap fragment = new MatchesMap();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
         return fragment;
     }
 
